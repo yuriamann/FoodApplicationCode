@@ -47,10 +47,13 @@
     <string name="logout">Logout</string>
     <string name="help_title">Help and Support</string>
     <string name="contact_info">Call: 702-895-5746\nEmail: foodappdevelopers@gmail.com</string>
-    <string name="help_phone">Call: 702&#8211;895&#8211;5746</string>
-    <string name="help_phone_uri">tel:6199130909</string>
+    <string name="help_phone">702&#8211;895&#8211;5746</string>
+    <string name="help_phone_uri">tel:702-895-5746</string>
     <string name="help_email">Email: foodappdevelopers@gmail.com</string>
     <string name="help_email_uri">foodappdevelopers@gmail.com</string>
+    <string name="email_us">Email Us</string>
+    <string name="version">Version 1.1.3</string>
+    <string name="copyright">Copyright © 2019. All rights Reserved.</string>
     <string name="rate">Rate us! </string>
     <string name="tips">Tips</string>
     <string name="today">Today</string>
