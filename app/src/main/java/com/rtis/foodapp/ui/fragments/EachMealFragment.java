@@ -376,10 +376,11 @@ public class EachMealFragment extends Fragment {
             public void handleResponse(BackendlessFile backendlessFile) {
                 ImageText imageText = imageTextList.get(position);
                 imageText.setImageFile(backendlessFile.getFileURL());
+                imageText.setImageFileLocally(mCurrentPhotoPath);
                 Logger.v(" EMF: Image File Url " + backendlessFile.getFileURL());
                 imageTextList.set(position, imageText);
                 ImageText.saveImageText(imageText);
-                mCurrentFile.delete();
+                //mCurrentFile.delete();
 
                 if (mAdapter != null) {
                     mAdapter.refresh(imageTextList, position);

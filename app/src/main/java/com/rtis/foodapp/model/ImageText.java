@@ -18,6 +18,7 @@ public class ImageText {
     // Stores URL to image and text files
     private String imageFile;
     private String textFile;
+    private String imageLocal;
 
     // Identifier variables
     private String meal;            // See Utils for format
@@ -30,6 +31,7 @@ public class ImageText {
      * Empty constructor.
      */
     public ImageText() {
+        imageLocal =  "";
         imageFile = "";
         textFile = "";
 
@@ -42,6 +44,7 @@ public class ImageText {
      * @param date the date identifier for the object
      */
     public ImageText(String meal, String date) {
+        imageLocal = "";
         imageFile = "";
         textFile = "";
         this.meal = meal;
@@ -93,12 +96,19 @@ public class ImageText {
     }
 
     public String getImageFile() {
-        return imageFile;
+        if(imageLocal != null)
+        {
+            return imageLocal;
+        }else {
+            return imageFile;
+        }
     }
 
     public String getTextFile() {
         return textFile;
     }
+
+    public void setImageFileLocally(String file){ imageLocal = file; }
 
     public void setImageFile(String file) {
         imageFile = file;
