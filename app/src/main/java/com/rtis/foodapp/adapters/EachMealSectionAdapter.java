@@ -246,7 +246,7 @@ public class EachMealSectionAdapter extends PagerAdapter {
                 ImageText.updateImageText(imageTextList.get(position));
 
                 // delete temporary local file
-                mCurrentFile.delete();
+                //mCurrentFile.delete();
 
             }
 
