@@ -131,15 +131,9 @@ public class SettingsFragment extends Fragment {
      * Helper method to handle email
      */
     private void helpEmail() {
-<<<<<<< HEAD
-        Uri email = Uri.parse((String) getText(R.string.help_email_uri));
-        Intent emailIntent = new Intent(Intent.ACTION_SEND);
-        emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[] {(String) getText(R.string.help_email_uri)});
-=======
         //Uri email = Uri.parse((String) getText(R.string.help_email_uri));
         Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", (String) getText(R.string.help_email_uri), null));
         //emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[] {(String) getText(R.string.help_email_uri)});
->>>>>>> 44e4570be2ee49aa0a17b0d101c72d0b633ed32f
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "MySnapFoodLog: Support Request");
         emailIntent.putExtra(Intent.EXTRA_TEXT, "Description of Problem\n");
 
