@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -49,6 +50,7 @@ public class SettingsFragment extends Fragment {
             }
         });
 
+ //       Button phone = (Button) view.findViewById(R.id.help_phone);
         TextView phone = (TextView) view.findViewById(R.id.help_phone);
         phone.setOnClickListener(new View.OnClickListener () {
             @Override
@@ -57,11 +59,37 @@ public class SettingsFragment extends Fragment {
             }
         });
 
+//        Button email = (Button) view.findViewById(R.id.help_email);
         TextView email = (TextView) view.findViewById(R.id.help_email);
         email.setOnClickListener(new View.OnClickListener () {
             @Override
             public void onClick(View view) {
                 helpEmail();
+            }
+        });
+
+
+        ImageButton facebookLink = (ImageButton) view.findViewById(R.id.facebook_button);
+        facebookLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToFacebook();
+            }
+        });
+
+        ImageButton twitterLink = (ImageButton) view.findViewById(R.id.twitter_button);
+        twitterLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToTwitter();
+            }
+        });
+
+        ImageButton InstagramLink = (ImageButton) view.findViewById(R.id.instangram_button);
+        InstagramLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToInstagram();
             }
         });
 
@@ -100,12 +128,18 @@ public class SettingsFragment extends Fragment {
     }
 
     /**
-     * Helper method to handle phone call
+     * Helper method to handle email
      */
     private void helpEmail() {
+<<<<<<< HEAD
         Uri email = Uri.parse((String) getText(R.string.help_email_uri));
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
         emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[] {(String) getText(R.string.help_email_uri)});
+=======
+        //Uri email = Uri.parse((String) getText(R.string.help_email_uri));
+        Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", (String) getText(R.string.help_email_uri), null));
+        //emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[] {(String) getText(R.string.help_email_uri)});
+>>>>>>> 44e4570be2ee49aa0a17b0d101c72d0b633ed32f
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "MySnapFoodLog: Support Request");
         emailIntent.putExtra(Intent.EXTRA_TEXT, "Description of Problem\n");
 
@@ -115,5 +149,42 @@ public class SettingsFragment extends Fragment {
         catch (android.content.ActivityNotFoundException ex){
             Toast.makeText(getContext(), "Email client not available.", Toast.LENGTH_SHORT).show();
         }
+    }
+
+
+    /**
+     * Link to facebook
+     */
+
+    private void goToFacebook(){
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+        intent.setData(Uri.parse("https://www.facebook.com/"));
+        startActivity(intent);
+    }
+
+    /**
+     * Link to Twitter
+     */
+
+    private void goToTwitter(){
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+        intent.setData(Uri.parse("https://twitter.com/"));
+        startActivity(intent);
+    }
+
+    /**
+     * Link to Instagram
+     */
+
+    private void goToInstagram(){
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+        intent.setData(Uri.parse("https://www.instagram.com/"));
+        startActivity(intent);
     }
 }
