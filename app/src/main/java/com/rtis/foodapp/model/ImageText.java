@@ -96,11 +96,16 @@ public class ImageText {
         return fragmentDate;
     }
 
+
+    //yuria 5/30/19 this file prioritizes pulling from local storage, but still provide the option
+    //of pulling from backendless for worst case scenario if local is unavailable
     public String getImageFile() {
         if(imageLocal != null)
         {
+            //imageLocal is the URL for local image
             return imageLocal;
         }else {
+            //imageFile is the URL for backendless image
            return imageFile;
         }
     }
@@ -109,8 +114,12 @@ public class ImageText {
         return textFile;
     }
 
-   //version 1 yuria public void setImageFileLocally(Uri fileName){ imageLocal = fileName.toString(); }
-
+    //yuria 5/30/19
+    //this function takes the 2 different local image file directories
+    //(mCurrentPhotoPath, mCurrentPhotoUri) and if the URI is available,
+    //prioritize that but if not, use the mCurrentPhotoPath URL for
+    //pulling the image from local storage when trying to load it
+    //at anytime
     public void setImageFileLocally(String fileName, Uri fileUri){
 
         String temp = null;

@@ -263,11 +263,15 @@ public class EachMealSectionAdapter extends PagerAdapter {
 
     /**
      * Helper method to load the image into view using Picasso library.
+     * When user clicks to load image from any meal, this executes
      *
      * @param position the position of ImageText in list to load image for
      */
     private void loadImageView(final int position) {
 
+        //URL that is used to load the image, this is achieved from
+        //getImageFile() function in ImageText.java and will
+        //prioritize locally stored image > backendless cloud image
         String fileURL = imageTextList.get(position).getImageFile();
 
         if (!fileURL.isEmpty()) {

@@ -383,8 +383,12 @@ public class EachMealFragment extends Fragment {
             public void handleResponse(BackendlessFile backendlessFile) {
                 ImageText imageText = imageTextList.get(position);
                 imageText.setImageFile(backendlessFile.getFileURL());
-             // version 1  imageText.setImageFileLocally(mCurrentPhotoUri);
+
+                //yuria 5/30/19, the function setImageFileLocally takes the two different location paths for the image
+                //from the local directories and saves it to the variable so that when we try to pull the photo,
+                //we can prioritize pulling the image from local phone storage instead of backendless
                 imageText.setImageFileLocally(mCurrentPhotoPath, mCurrentPhotoUri);
+
                 Logger.v(" EMF: Image File Url " + backendlessFile.getFileURL());
                 imageTextList.set(position, imageText);
                 ImageText.saveImageText(imageText);
