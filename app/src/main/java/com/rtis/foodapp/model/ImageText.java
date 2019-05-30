@@ -111,7 +111,18 @@ public class ImageText {
 
    //version 1 yuria public void setImageFileLocally(Uri fileName){ imageLocal = fileName.toString(); }
 
-    public void setImageFileLocally(String fileName){ imageLocal = fileName; }
+    public void setImageFileLocally(String fileName, Uri fileUri){
+
+        String temp = null;
+        temp = fileUri.toString();
+
+        if(temp != null) {
+            imageLocal = temp;
+        }else {
+            imageLocal = fileName;
+        }
+
+    }
 
     public void setImageFile(String file) {
         imageFile = file;
