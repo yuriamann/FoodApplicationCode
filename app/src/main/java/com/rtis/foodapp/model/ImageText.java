@@ -1,12 +1,13 @@
 package com.rtis.foodapp.model;
 
-import android.media.Image;
+import android.net.Uri;
 
 import com.backendless.Backendless;
 import com.backendless.async.callback.AsyncCallback;
 import com.backendless.exceptions.BackendlessFault;
 import com.rtis.foodapp.utils.Logger;
 
+import java.net.URI;
 import java.util.Date;
 
 /**
@@ -31,7 +32,7 @@ public class ImageText {
      * Empty constructor.
      */
     public ImageText() {
-        imageLocal =  "";
+        imageLocal =  null;
         imageFile = "";
         textFile = "";
 
@@ -44,7 +45,7 @@ public class ImageText {
      * @param date the date identifier for the object
      */
     public ImageText(String meal, String date) {
-        imageLocal = "";
+        imageLocal = null;
         imageFile = "";
         textFile = "";
         this.meal = meal;
@@ -100,7 +101,7 @@ public class ImageText {
         {
             return imageLocal;
         }else {
-            return imageFile;
+           return imageFile;
         }
     }
 
@@ -108,7 +109,7 @@ public class ImageText {
         return textFile;
     }
 
-    public void setImageFileLocally(String file){ imageLocal = file; }
+    public void setImageFileLocally(Uri fileName){ imageLocal = fileName.toString(); }
 
     public void setImageFile(String file) {
         imageFile = file;

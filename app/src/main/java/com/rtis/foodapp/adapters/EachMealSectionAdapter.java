@@ -115,6 +115,7 @@ public class EachMealSectionAdapter extends PagerAdapter {
         mImageView = (ImageView) layout.findViewById(R.id.capturedImage);
         if (imageTextList.size() > 0) {
             loadImageView(position);
+
         }
 
         return layout;

@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:src="@android:drawable/ic_menu_camera"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
         android:contentDescription="@null" />
 
     <ImageButton

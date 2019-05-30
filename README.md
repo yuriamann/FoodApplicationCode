@@ -4,10 +4,48 @@ FoodApp is an Android app for tracking daily meals. In order to encourage people
 This app is used in a research project about the changing eating habits of Filipinos when moving to the US.
 
 ## Built With
-Android Studio 3.1.3
+Android Studio 3.4
 
 ## Device Compatability
-Tested with Android API level 24
+Tested with Android API level 28
+
+## SDK Platforms
+Android Q Preview, API Level Q, Revision 2
+Android 9.0 (Pie), API Level 28, Revision 6
+
+##SDK Tools
+Android SDK Build-Tools 29-rc3
+GPU Debugging Tools
+Android Auto API Simulators Version 1
+Android Emulator Version 29.0.6
+Android SDK Platform-Tools 28.0.2
+Android SDK Tools Version 26.1.1
+Documentation for Android SDK Version 1
+Google Play APK Expansion Library Version 1
+Google Play Instant Development SDK Version 1.7.0
+Google Play Licensing Library Version 1
+Intel x86 Emulator Accelerator (HAXM installer) Version 7.3.2
+
+Support Repository
+    Android Support Repository Version 47.0.0
+    Google Repository Version 58
+
+##SDK Update Sites
+Android Automotive System Images
+Android Repository
+Android System Images
+Android TV System Images
+Android Wear System Images
+Android Wear for China System Images
+Glass Development Kit, Google Inc.
+Google API add-on System Images
+Google Inc.
+Intel HAXM
+Offline Repo
+
+##AVD Virtual Devices
+Nexus 6P API 28
+
 
 ## Installing and Running
 1. Download Android Studio for your OS [here](https://developer.android.com/studio/).

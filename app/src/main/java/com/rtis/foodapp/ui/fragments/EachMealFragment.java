@@ -1,5 +1,6 @@
 package com.rtis.foodapp.ui.fragments;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
@@ -35,12 +36,14 @@ import com.rtis.foodapp.utils.Logger;
 import com.rtis.foodapp.utils.Util;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.lang.Object;
 
 import static android.app.Activity.RESULT_OK;
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;
@@ -318,6 +321,7 @@ public class EachMealFragment extends Fragment {
         //File image = new File(storageDir, imageFileName + ".jpg");
         mCurrentFile = image;
 
+
         // Save a file: path for use with ACTION_VIEW intents
         mCurrentPhotoPath = image.getAbsolutePath();
 
@@ -370,13 +374,16 @@ public class EachMealFragment extends Fragment {
         Util.resizeImage(mCurrentFile, 1024, true);
         Logger.v("EMF: Resize End");
         Logger.v("EMF: Upload Start");
+        //write to disk using bitmap call function in util
         Backendless.Files.upload(mCurrentFile, directory, new AsyncCallback<BackendlessFile>() {
+
+
 
             @Override
             public void handleResponse(BackendlessFile backendlessFile) {
                 ImageText imageText = imageTextList.get(position);
                 imageText.setImageFile(backendlessFile.getFileURL());
-                imageText.setImageFileLocally(mCurrentPhotoPath);
+                imageText.setImageFileLocally(mCurrentPhotoUri);
                 Logger.v(" EMF: Image File Url " + backendlessFile.getFileURL());
                 imageTextList.set(position, imageText);
                 ImageText.saveImageText(imageText);
