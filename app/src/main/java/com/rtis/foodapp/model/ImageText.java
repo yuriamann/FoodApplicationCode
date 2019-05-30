@@ -109,7 +109,9 @@ public class ImageText {
         return textFile;
     }
 
-    public void setImageFileLocally(Uri fileName){ imageLocal = fileName.toString(); }
+   //version 1 yuria public void setImageFileLocally(Uri fileName){ imageLocal = fileName.toString(); }
+
+    public void setImageFileLocally(String fileName){ imageLocal = fileName; }
 
     public void setImageFile(String file) {
         imageFile = file;

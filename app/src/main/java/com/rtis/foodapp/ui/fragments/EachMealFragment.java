@@ -383,7 +383,8 @@ public class EachMealFragment extends Fragment {
             public void handleResponse(BackendlessFile backendlessFile) {
                 ImageText imageText = imageTextList.get(position);
                 imageText.setImageFile(backendlessFile.getFileURL());
-                imageText.setImageFileLocally(mCurrentPhotoUri);
+             // version 1  imageText.setImageFileLocally(mCurrentPhotoUri);
+                imageText.setImageFileLocally(mCurrentPhotoPath);
                 Logger.v(" EMF: Image File Url " + backendlessFile.getFileURL());
                 imageTextList.set(position, imageText);
                 ImageText.saveImageText(imageText);
